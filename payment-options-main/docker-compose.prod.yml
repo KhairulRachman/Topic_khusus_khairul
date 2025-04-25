@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  payment-options:
+    image: ${DOCKER_IMAGE}:${CI_COMMIT_SHORT_SHA}
+    ports:
+      - "8081:8081"
+    environment:
+      - LISTEN_PORT=8081
+    restart: unless-stopped
